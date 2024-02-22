@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .rank09bronze {
+            color: #cd7f32;
+        }
+        .rank08silver {
+            color: #C0C0C0;
+        }
+        .rank07gold {
+            color: #FFD700;
+        }
+        .rank06platinum {
+            color: #244A72;
+        }
+        .rank03diamond {
+            color: #B9F2FF;
+        }
+        .rank02master {
+            color: #000000;
+        }
+        .rank01grandmaster {
+            color: #570F21;
+        }
+    </style>
+</head>
+<body>
+    <h1>Leaderboard</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Rank</th> <!-- Added Rank header -->
+                <th>Player</th>
+                <th>MMR</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for rank, player, mmr in leaderboard_data %} <!-- Modified for loop to include rank -->
+            <tr class="{% if mmr >= 0 and mmr <= 1400 %}rank09bronze{% elif mmr >= 1500 and mmr <= 2900 %}rank08silver{% elif mmr >= 3000 and mmr <= 5000 %}rank07gold{% elif mmr >= 5100 and mmr <= 6900 %}rank06platinum{% elif mmr >= 7000 and mmr <= 9400 %}rank03diamond{% elif mmr >= 9500 %}rank02master{% endif %}">
+                <td>{{ rank }}</td> <!-- Display rank number -->
+                <td>{{ player }}</td>
+                <td>{{ mmr }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,91 @@
+/* Updated CSS file content */
+body {
+    background-color: #303030; /* Dark greyish almost black background */
+    color: white; /* Text color */
+    font-family: Arial, sans-serif; /* Font family */
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Set text color for player names */
+.rank09bronze, .rank08silver, .rank07gold, .rank06platinum, .rank03diamond, .rank02master, .rank01grandmaster {
+    color: #fff; /* Set the default text color to white */
+}
+
+/* Override text color for player names and MMRs in each MMR range */
+.rank09bronze td:first-child,
+.rank08silver td:first-child,
+.rank07gold td:first-child,
+.rank06platinum td:first-child,
+.rank03diamond td:first-child,
+.rank02master td:first-child,
+.rank01grandmaster td:first-child,
+.rank09bronze td:nth-child(2),
+.rank08silver td:nth-child(2),
+.rank07gold td:nth-child(2),
+.rank06platinum td:nth-child(2),
+.rank03diamond td:nth-child(2),
+.rank02master td:nth-child(2),
+.rank01grandmaster td:nth-child(2) {
+    color: inherit; /* Use the default text color for the player names and MMRs */
+}
+
+/* Set background colors for each MMR range */
+tr.rank09bronze:nth-child(4n+1),
+tr.rank08silver:nth-child(4n+1),
+tr.rank07gold:nth-child(4n+1),
+tr.rank06platinum:nth-child(4n+1),
+tr.rank03diamond:nth-child(4n+1),
+tr.rank02master:nth-child(4n+1),
+tr.rank01grandmaster:nth-child(4n+1) {
+    background-color: #303030; /* Dark gray pattern */
+}
+
+tr.rank09bronze:nth-child(4n+2),
+tr.rank08silver:nth-child(4n+2),
+tr.rank07gold:nth-child(4n+2),
+tr.rank06platinum:nth-child(4n+2),
+tr.rank03diamond:nth-child(4n+2),
+tr.rank02master:nth-child(4n+2),
+tr.rank01grandmaster:nth-child(4n+2) {
+    background-color: #404040; /* Slightly darker shade */
+}
+
+tr.rank09bronze:nth-child(4n+3),
+tr.rank08silver:nth-child(4n+3),
+tr.rank07gold:nth-child(4n+3),
+tr.rank06platinum:nth-child(4n+3),
+tr.rank03diamond:nth-child(4n+3),
+tr.rank02master:nth-child(4n+3),
+tr.rank01grandmaster:nth-child(4n+3) {
+    background-color: #303030; /* Dark gray pattern */
+}
+
+tr.rank09bronze:nth-child(4n+4),
+tr.rank08silver:nth-child(4n+4),
+tr.rank07gold:nth-child(4n+4),
+tr.rank06platinum:nth-child(4n+4),
+tr.rank03diamond:nth-child(4n+4),
+tr.rank02master:nth-child(4n+4),
+tr.rank01grandmaster:nth-child(4n+4) {
+    background-color: #404040; /* Slightly darker shade */
+}

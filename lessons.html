@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legislative Acts Impacting Cybersecurity</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: 'Monospace', sans-serif;
+            color: #ffffff;
+            font-size: 3rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px hsla(0, 100%, 48%, 0.737), 0 0 20px #e2ff06, 0 0 30px #f10606;
+            }
+
+            to {
+                text-shadow: 0 0 20px #bb1414, 0 0 30px #e10909, 0 0 40px #a0d2eb;
+            }
+        }
+
+        .card {
+            background-color: rgba(139, 0, 0, 0.8);
+            border: 2px solid yellow;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 400px;
+            transition: transform 0.3s;
+        }
+
+        .card-header {
+            cursor: pointer;
+            font-weight: bold;
+            color: yellow;
+        }
+
+        .card-body {
+            display: none;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .congratulations {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.5rem;
+            color: yellow;
+        }
+
+        .status-container {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: yellow;
+        }
+
+        #addActBtn {
+            margin-top: 20px;
+            background-color: yellow;
+            color: black;
+        }
+
+        .shield-status {
+            margin: 20px 0;
+            font-size: 1.5rem;
+            color: yellow;
+        }
+
+        .shield {
+            width: 80px;
+            height: 120px;
+            background-image: url('shield.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: inline-block;
+            position: relative;
+            margin: 0 5px;
+            transition: transform 0.3s;
+        }
+
+        .filled {
+            transform: scale(1.1);
+            filter: brightness(1.3);
+        }
+
+        .shield-label {
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: yellow;
+            font-weight: bold;
+        }
+
+        #redoBtn {
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="index.html" class="btn btn-primary"
+        style="border-color:#430000; background-color: #430000; color:#000000; position: fixed; top: 20px; left: 20px;">
+        <i class="bi bi-house-door-fill"></i> Home
+    </a>
+
+    <div class="container">
+        <h1>Legislative Acts Impacting Cybersecurity</h1>
+
+        <!-- Central Card for Legislative Acts -->
+        <div class="card" id="legislationCard">
+            <div class="card-header">GDPR (General Data Protection Regulation)</div>
+            <div class="card-body">
+                <p id="legislationDescription">Introduced in 2018, GDPR enhances data protection and privacy for
+                    individuals within the European Union.</p>
+            </div>
+            <button class="btn" id="addActBtn">Enable Legislation</button>
+        </div>
+
+        <div class="shield-status" id="statusContainer">
+            Shield Status: <span id="shieldCount">0</span>/3
+            <div id="shields">
+                <div class="shield"><div class="shield-label">GDPR</div></div>
+                <div class="shield"><div class="shield-label">DPA</div></div>
+                <div class="shield"><div class="shield-label">CCPA</div></div>
+            </div>
+        </div>
+
+        <div class="congratulations" id="congratulationsMessage">Congratulations! You've made it more secure!</div>
+        <button id="redoBtn" class="btn btn-warning">
+            &#x21bb; Start Over
+        </button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+    <script>
+        const legislationCard = document.getElementById('legislationCard');
+        const addActBtn = document.getElementById('addActBtn');
+        const legislationDescription = document.getElementById('legislationDescription');
+        const shieldCountDisplay = document.getElementById('shieldCount');
+        const congratulationsMessage = document.getElementById('congratulationsMessage');
+        const redoBtn = document.getElementById('redoBtn');
+        const shields = document.querySelectorAll('.shield');
+
+        // Legislative acts data
+        const acts = [
+            {
+                title: 'GDPR (General Data Protection Regulation)',
+                description: 'Introduced in 2018, GDPR enhances data protection and privacy for individuals within the European Union.'
+            },
+            {
+                title: 'DPA (Data Protection Act)',
+                description: 'Updated in 2018, the DPA complements GDPR and establishes standards for personal data processing.'
+            },
+            {
+                title: 'CCPA (California Consumer Privacy Act)',
+                description: 'Effective from 2020, CCPA gives California residents increased control over their personal information.'
+            }
+        ];
+
+        let shieldCount = 0; // Start at 0 since no acts have been enabled yet
+
+        // Show GDPR description immediately
+        legislationCard.querySelector('.card-body').style.display = 'block';
+
+        addActBtn.addEventListener('click', () => {
+            if (shieldCount < acts.length) {
+                // Reveal the next legislative act
+                const currentAct = acts[shieldCount];
+                legislationCard.querySelector('.card-header').innerText = currentAct.title;
+                legislationDescription.innerText = currentAct.description;
+                legislationCard.querySelector('.card-body').style.display = 'block';
+
+                // Update shield count
+                shieldCount++;
+                shieldCountDisplay.innerText = shieldCount;
+
+                // Fill in the shield status visual
+                if (shieldCount <= shields.length) {
+                    shields[shieldCount - 1].classList.add('filled');
+                }
+            }
+
+            // Check if all acts are enabled
+            if (shieldCount >= acts.length) {
+                shieldCountDisplay.innerText = shieldCount; // Ensure it shows 3/3
+                addActBtn.disabled = true;
+                addActBtn.innerText = "All Acts Enabled";
+                redoBtn.style.display = 'inline-block'; // Show redo button
+
+                // Show the congratulations message
+                showCongratsMessage();
+
+                // Trigger confetti
+                const jsConfetti = new JSConfetti();
+                jsConfetti.addConfetti();
+            }
+        });
+
+        // Redo Button functionality to restart the game
+        redoBtn.addEventListener('click', () => {
+            shieldCount = 0;
+            shieldCountDisplay.innerText = shieldCount;
+            addActBtn.disabled = false;
+            addActBtn.innerText = "Enable Legislation";
+            redoBtn.style.display = 'none';
+
+            // Reset shields
+            shields.forEach(shield => shield.classList.remove('filled'));
+
+            // Reset to first act
+            legislationCard.querySelector('.card-header').innerText = acts[0].title;
+            legislationDescription.innerText = acts[0].description;
+            legislationCard.querySelector('.card-body').style.display = 'block'; // Show the card body again
+            congratulationsMessage.style.display = 'none'; // Hide the congratulations message
+        });
+
+        function showCongratsMessage() {
+            congratulationsMessage.style.display = 'block';
+            setTimeout(() => {
+                congratulationsMessage.style.display = 'none';
+            }, 3000); // Hide after 3 seconds
+        }
+    </script>
+
+</body>
+
+</html>

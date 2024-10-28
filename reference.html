@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reference List</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000000; /* Dark background */
+            color: #ffffff; /* Default text color */
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: 'Monospace', sans-serif; /* Monospace with fallback */
+            color: #ffffff; /* Set text color to the light blue shade */
+            font-size: 3rem; /* Increase font size */
+            letter-spacing: 2px; /* Space out the letters slightly */
+            text-transform: uppercase; /* Make text uppercase for a bold look */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+            animation: glow 1.5s ease-in-out infinite alternate; /* Animation for glow effect */
+        }
+
+        /* Keyframes for glow animation */
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px hsla(0, 100%, 48%, 0.737), 0 0 20px #e2ff06, 0 0 30px #f10606;
+            }
+
+            to {
+                text-shadow: 0 0 20px #bb1414, 0 0 30px #e10909, 0 0 40px #a0d2eb;
+            }
+        }
+
+        .reference-list {
+            background-color: rgba(255, 255, 255, 0.1); /* Light background for readability */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+        }
+
+        .reference-list h2 {
+            color: yellow; /* Title color */
+            margin-bottom: 20px; /* Space under the title */
+        }
+
+        .reference-item {
+            margin-bottom: 15px; /* Spacing between reference items */
+            line-height: 1.5; /* Increased line height for readability */
+        }
+
+        .reference-item a {
+            color: #00bfff; /* Link color */
+            text-decoration: none;
+        }
+
+        .reference-item a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+
+        .reference-item span {
+            color: #aaaaaa; /* Gray color for inline text */
+        }
+    </style>
+</head>
+
+<body>
+    <a href="index.html" class="btn btn-primary" style="border-color:#430000; background-color: #430000; color:#000000; position: fixed; top: 20px; left: 20px;">
+        <i class="bi bi-house-door-fill"></i> Home
+    </a>
+    <div class="container my-5">
+        <div class="reference-list">
+            <h1>Reference List</h1>
+
+            <div class="reference-item">
+                Brady, J.S. (2017). Press Briefing on the Attribution of the WannaCry Malware Attack to North Korea – the White House. 
+                <span>[online]</span> trumpwhitehouse.archives.gov. 
+                Available at: 
+                <a href="https://trumpwhitehouse.archives.gov/briefings-statements/press-briefing-on-the-attribution-of-the-wannacry-malware-attack-to-north-korea-121917/" target="_blank">https://trumpwhitehouse.archives.gov/briefings-statements/press-briefing-on-the-attribution-of-the-wannacry-malware-attack-to-north-korea-121917/</a> 
+                <span>[Accessed 14 Oct. 2024]</span>.
+            </div>
+
+            <div class="reference-item">
+                Cloudflare (2017). What Was the WannaCry Ransomware attack? 
+                <span>[online]</span> Cloudflare.com. Available at: 
+                <a href="https://www.cloudflare.com/en-gb/learning/security/ransomware/wannacry-ransomware/" target="_blank">https://www.cloudflare.com/en-gb/learning/security/ransomware/wannacry-ransomware/</a> 
+                <span>[Accessed 14 Oct. 2024]</span>.
+            </div>
+
+            <div class="reference-item">
+                Kaspersky (2018). What Is WannaCry ransomware? 
+                <span>[online]</span> Kaspersky.com. Available at: 
+                <a href="https://www.kaspersky.com/resource-center/threats/ransomware-wannacry" target="_blank">https://www.kaspersky.com/resource-center/threats/ransomware-wannacry</a> 
+                <span>[Accessed 16 Oct. 2024]</span>.
+            </div>
+
+            <div class="reference-item">
+                Malwarebytes (2017). WannaCry Ransomware Infection Heat Map - YouTube. 
+                <span>[online]</span> www.youtube.com. Available at: 
+                <a href="https://www.youtube.com/watch?v=IEAtGCkbq5Y" target="_blank">https://www.youtube.com/watch?v=IEAtGCkbq5Y</a> 
+                <span>[Accessed 5 Oct. 2024]</span>.
+            </div>
+
+            <div class="reference-item">
+                NCC Group (2022). The Lazarus group: North Korean Scourge for +10 Years. 
+                <span>[online]</span> Nccgroup.com. Available at: 
+                <a href="https://www.nccgroup.com/uk/the-lazarus-group-north-korean-scourge-for-plus10-years/" target="_blank">https://www.nccgroup.com/uk/the-lazarus-group-north-korean-scourge-for-plus10-years/</a> 
+                <span>[Accessed 16 Oct. 2024]</span>.
+            </div>
+
+            <div class="reference-item">
+                NHS (2017). WannaCry Ransomware Using SMB Vulnerability. 
+                <span>[online]</span> NHS Digital. Available at: 
+                <a href="https://digital.nhs.uk/cyber-alerts/2017/cc-1411" target="_blank">https://digital.nhs.uk/cyber-alerts/2017/cc-1411</a> 
+                <span>[Accessed 8 Oct. 2024]</span>.
+            </div>
+
+            <div class="reference-item">
+                The Law Society (2024). UK Sanctions Regime. 
+                <span>[online]</span> www.lawsociety.org.uk. Available at: 
+                <a href="https://www.lawsociety.org.uk/topics/anti-money-laundering/sanctions-guide" target="_blank">https://www.lawsociety.org.uk/topics/anti-money-laundering/sanctions-guide</a> 
+                <span>[Accessed 12 Oct. 2024]</span>.
+            </div>
+
+            <div class="reference-item">
+                State of California Department of Justice (2024). California Consumer Privacy Act (CCPA). 
+                <span>[online]</span> State of California - Department of Justice - Office of the Attorney General. 
+                Available at: <a href="https://oag.ca.gov/privacy/ccpa" target="_blank">https://oag.ca.gov/privacy/ccpa</a> 
+                <span>[Accessed 20 Oct. 2024]</span>.
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

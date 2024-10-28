@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>WannaCry Visualisation</h1>
+
+    <div class="carousel slide" 
+    id="carouselDemo"
+    data-bs-ride="carousel">
+
+        <div class="carousel-inner">
+
+            <!-- Combined Overview and Global Impact -->
+            <div class="carousel-item active">
+                <a href="globalImpact.html"> <!-- Link to your page -->
+                    <img src="1.png" class="w-100">
+                    <div class="carousel-caption">
+                        <h5>WannaCry Attack & Impact</h5>
+                        <p>An overview of WannaCry, its techniques, and its global disruption across industries.</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Lazarus Group Section -->
+            <div class="carousel-item">
+                <a href="lazursGroup.html"> <!-- Link to your page -->
+                    <img src="4.jpg" class="w-100">
+                    <div class="carousel-caption">
+                        <h5>Behind the Attack: Lazarus Group</h5>
+                        <p>Discover the North Korean group behind the WannaCry ransomware.</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Legal & Regulatory Issues -->
+            <div class="carousel-item">
+                <a href="legal.html"> <!-- Link to your page -->
+                    <img src="5.jpg" class="w-100">
+                    <div class="carousel-caption">
+                        <h5>Legal & Regulatory Issues</h5>
+                        <p>The legal impacts of WannaCry and how it shaped cybersecurity laws.</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Lessons and Prevention -->
+            <div class="carousel-item">
+                <a href="lessons.html"> <!-- Link to your page -->
+                    <img src="6.jpg" class="w-100">
+                    <div class="carousel-caption">
+                        <h5>Lessons & Prevention</h5>
+                        <p>Key lessons from WannaCry and steps to prevent future ransomware attacks.</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- References Section -->
+            <div class="carousel-item">
+                <a href="reference.html"> <!-- Link to your page -->
+                    <img src="8.png" class="w-100">
+                    <div class="carousel-caption">
+                        <h5>References</h5>
+                        <p>Sources and references used in this project.</p>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Carousel Controls -->
+        <button class="carousel-control-prev" 
+        type="button"
+        data-bs-target="#carouselDemo"
+        data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <button class="carousel-control-next" 
+        type="button"
+        data-bs-target="#carouselDemo"
+        data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+
+        <!-- Carousel Indicators -->
+        <div class="carousel-indicators">
+            <button type="button" class="active"
+            data-bs-target="#carouselDemo"
+            data-bs-slide-to="0">
+            <img src="1.png" /></button>
+
+            <button type="button"
+            data-bs-target="#carouselDemo"
+            data-bs-slide-to="1">
+            <img src="4.jpg" /></button>
+
+            <button type="button"
+            data-bs-target="#carouselDemo"
+            data-bs-slide-to="2">
+            <img src="5.jpg" /></button>
+
+            <button type="button"
+            data-bs-target="#carouselDemo"
+            data-bs-slide-to="3">
+            <img src="6.jpg" /></button>
+
+            <button type="button"
+            data-bs-target="#carouselDemo"
+            data-bs-slide-to="4">
+            <img src="8.png" /></button>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

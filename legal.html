@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Legal Frameworks</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Roboto', sans-serif; /* Apply Roboto font */
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3rem; /* Increase font size */
+            letter-spacing: 2px; /* Space out the letters slightly */
+            text-transform: uppercase; /* Make text uppercase for a bold look */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+            animation: glow 1.5s ease-in-out infinite alternate; /* Animation for glow effect */
+            margin-bottom: 40px; /* Space below the title */
+        }
+
+        /* Keyframes for glow animation */
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px hsla(0, 100%, 48%, 0.737), 0 0 20px #e2ff06, 0 0 30px #f10606;
+            }
+            to {
+                text-shadow: 0 0 20px #bb1414, 0 0 30px #e10909, 0 0 40px #a0d2eb;
+            }
+        }
+
+        /* Card Styling */
+        .card {
+            background-color: #1a1a1a;
+            border: none;
+            margin-bottom: 20px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
+            text-align: center; /* Center text inside the card */
+            transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+            border-radius: 10px; /* Rounded corners */
+            padding: 20px; /* Add padding inside the card */
+        }
+
+        /* Card Hover Effect */
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        /* High Impact */
+        .high-impact {
+            background-color: rgba(255, 77, 77, 0.9); /* Slightly softened red */
+        }
+
+        .high-impact:hover {
+            background-color: rgba(200, 0, 0, 0.9); /* Darker shade on hover */
+            box-shadow: 0 0 20px rgba(255, 77, 77, 1); /* Red glow */
+        }
+
+        /* Medium Impact */
+        .medium-impact {
+            background-color: rgba(255, 163, 77, 0.9); /* Slightly softened orange */
+        }
+
+        .medium-impact:hover {
+            background-color: rgba(200, 100, 0, 0.9); /* Darker shade on hover */
+            box-shadow: 0 0 20px rgba(255, 163, 77, 1); /* Orange glow */
+        }
+
+        /* Low Impact */
+        .low-impact {
+            background-color: rgba(255, 255, 77, 0.9); /* Slightly softened yellow */
+        }
+
+        .low-impact:hover {
+            background-color: rgba(200, 200, 0, 0.9); /* Darker shade on hover */
+            box-shadow: 0 0 20px rgba(255, 255, 77, 1); /* Yellow glow */
+        }
+
+        .card-title {
+            font-weight: bold;
+            margin-bottom: 10px; /* Add space below title */
+        }
+
+        .faq-image {
+            max-height: 120px;
+            width: auto;
+            margin-bottom: 15px; /* Space below image */
+        }
+
+        /* Fade-in Effect */
+        .fade-in {
+            opacity: 0;
+            transition: opacity 1s ease-in;
+        }
+
+        .fade-in.show {
+            opacity: 1;
+        }
+
+        /* Impact Key Styling */
+        .impact-key {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 150px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* "Impact" Label */
+        .impact-key h5 {
+            color: white;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .impact-key div {
+            width: 20px;
+            height: 20px;
+            margin: 5px auto;
+            padding: 1px;
+            border-radius: 5px;
+        }
+
+        .high-impact-key {
+            background-color: red;
+        }
+
+        .medium-impact-key {
+            background-color: orange;
+        }
+
+        .low-impact-key {
+            background-color: yellow;
+        }
+
+        /* Arrow Image Styling */
+        .arrow-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 0.1px;
+        }
+
+        .arrow-image {
+            width: 40px;
+            height: 80px;
+        }
+
+        /* Container */
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px; /* Added padding to the container */
+        }
+
+        .card-container {
+            flex: 1 0 30%;
+            padding: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .card-container {
+                flex: 1 0 100%; /* Full width on small screens */
+            }
+        }
+
+        /* Hover effect for impact key */
+        .impact-key:hover {
+            background-color: rgba(255, 255, 255, 0.1); /* Lighten on hover */
+            transition: background-color 0.3s; /* Smooth transition */
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="btn btn-primary" style="border-color:#430000; background-color: #430000; color:#000000; position: fixed; top: 20px; left: 20px;">
+        <i class="bi bi-house-door-fill"></i> Home
+    </a>
+
+    <div class="container mt-5">
+        <h1>Legal Frameworks Affected by WannaCry</h1>
+
+        <div class="row">
+            <!-- Impact Key Column -->
+            <div class="col-md-2 d-flex align-items-center">
+                <div class="impact-key">
+                    <h5>Impact</h5>
+                    <div class="high-impact-key"></div>
+                    <div class="medium-impact-key"></div>
+                    <div class="low-impact-key"></div>
+                </div>
+
+                <!-- Arrow Image -->
+                <div class="arrow-container">
+                    <img src="arrow.png" alt="Impact Arrow" class="arrow-image">
+                </div>
+            </div>
+
+            <!-- Cards Column -->
+            <div class="col-md-10">
+                <div class="row">
+                    <!-- High Impact Card -->
+                    <div class="col-md-4 card-container">
+                        <div class="card high-impact fade-in">
+                            <div class="card-body">
+                                <h5 class="card-title">Computer Misuse Act 1990</h5>
+                                <img src="miss_use_act.png" alt="CMA Icon" class="faq-image">
+                                <p class="card-text">Addresses unauthorised computer access.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Medium Impact Card -->
+                    <div class="col-md-4 card-container">
+                        <div class="card medium-impact fade-in">
+                            <div class="card-body">
+                                <h5 class="card-title">HIPAA (US)</h5>
+                                <img src="hippa-logo.png" alt="HIPAA Icon" class="faq-image">
+                                <p class="card-text">Protects healthcare info privacy.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Low Impact Card -->
+                    <div class="col-md-4 card-container">
+                        <div class="card low-impact fade-in">
+                            <div class="card-body">
+                                <h5 class="card-title">CISA (US)</h5>
+                                <img src="cisa_act.jpg" alt="CISA Icon" class="faq-image">
+                                <p class="card-text">Promotes cybersecurity info sharing in the U.S., with limited impact on WannaCry.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <script>
+        // Fade-in effect for cards
+        const cards = document.querySelectorAll('.fade-in');
+        let delay = 0;
+
+        cards.forEach((card) => {
+            setTimeout(() => {
+                card.classList.add('show');
+            }, delay);
+            delay += 300; // Increase delay for each card
+        });
+    </script>
+</body>
+</html>

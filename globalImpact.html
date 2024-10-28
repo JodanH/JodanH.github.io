@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>WannaCry Timeline</title>
+    <style>
+        body {
+            background-color: #000000; /* Black background for the entire page */
+        }
+
+        h1 {
+    text-align: center;
+    font-family: 'Monospace', sans-serif; /* Monospace with fallback */
+    color: #ffffff; /* Set text color to the light blue shade */
+    font-size: 3rem; /* Increase font size */
+    letter-spacing: 2px; /* Space out the letters slightly */
+    text-transform: uppercase; /* Make text uppercase for a bold look */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    animation: glow 1.5s ease-in-out infinite alternate; /* Animation for glow effect */
+}
+
+/* Keyframes for glow animation */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px hsla(0, 100%, 48%, 0.737), 0 0 20px #e2ff06, 0 0 30px #f10606;
+    }
+    to {
+        text-shadow: 0 0 20px #bb1414, 0 0 30px #e10909, 0 0 40px #a0d2eb;
+    }
+}
+
+        .card {
+            background-color: #000; /* Black background for the card */
+            border: none; /* No border for the card */
+        }
+
+        .timeline {
+            list-style: none; /* Remove default list styles */
+            padding: 0; /* No padding */
+            margin: 0; /* No margin */
+            background-color: #000; /* Black background for the timeline */
+            padding: 10px; /* Add some padding around the timeline */
+            border-radius: 5px; /* Rounded corners */
+        }
+
+        .event-list {
+            position: relative; /* Position relative for tooltip */
+            margin: 20px 0; /* Margin between events */
+            padding: 10px; /* Padding inside each event */
+            color: #FFFFFF; /* White text color */
+            background: rgba(128, 0, 0, 0.9); /* Dark red with transparency for event background */
+            border-radius: 5px; /* Rounded corners for events */
+        }
+
+        .event-list i {
+            font-size: 24px; /* Icon size */
+            margin-right: 10px; /* Space between icon and text */
+            color: #FFD700; /* Gold color for icons */
+        }
+
+        .tooltip {
+            display: none; /* Hidden by default */
+            position: absolute; /* Absolute positioning for tooltip */
+            background: rgba(0, 0, 0, 0.8); /* Dark background for tooltip */
+            color: #fff; /* White text for tooltip */
+            padding: 5px; /* Padding inside tooltip */
+            border-radius: 5px; /* Rounded corners for tooltip */
+            z-index: 10; /* Ensure tooltip is on top */
+            top: 100%; /* Position below the event */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Center alignment */
+            white-space: nowrap; /* No line breaks */
+        }
+
+        .event-list:hover .tooltip {
+            display: block; /* Show tooltip on hover */
+        }
+
+        .modal-content {
+            background-color: rgba(0, 0, 0, 0.8); /* Dark background for modal */
+            color: white; /* White text for modal */
+            border-radius: 10px; /* Rounded corners for modal */
+        }
+
+        .modal-header,
+        .modal-footer {
+            border: none; /* No border for modal header and footer */
+        }
+
+        /* YouTube video container */
+        .video-container {
+            position: relative; /* Position relative for video container */
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0; /* No height */
+            overflow: hidden; /* Hide overflow */
+            max-width: 100%; /* Full width */
+            background: #000; /* Black background for video area */
+            margin-bottom: 20px; /* Margin below the video */
+        }
+
+        .video-container iframe {
+            position: absolute; /* Absolute positioning for iframe */
+            top: 0; /* Top alignment */
+            left: 0; /* Left alignment */
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>WannaCry Timeline</h1>
+    <a href="index.html" class="btn btn-primary" style="border-color:#430000; background-color: #430000; color:#000000; position: fixed; top: 20px; left: 20px;">
+        <i class="bi bi-house-door-fill"></i> Home
+    </a>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="video-container">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/IEAtGCkbq5Y?si=OJVZuq6VnZOH0b9N" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        
+                        <div class="timeline">
+                            <li class="event-list">
+                                <div class="px-4">
+                                    <i class="fas fa-lock"></i>
+                                    <h5 class="font-size-16">August 2016</h5>
+                                    <p class="event-description">EternalBlue Stolen</p>
+                                    <div class="tooltip">Shadow Brokers steal EternalBlue from the NSA.</div>
+                                </div>
+                            </li>
+
+                            <li class="event-list">
+                                <div class="px-4">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <h5 class="font-size-16">March 14, 2017</h5>
+                                    <p class="event-description">Patch Released</p>
+                                    <div class="tooltip">Microsoft releases MS17-010 to fix SMB vulnerability.</div>
+                                </div>
+                            </li>
+
+                            <li class="event-list">
+                                <div class="px-4">
+                                    <i class="fas fa-bug"></i>
+                                    <h5 class="font-size-16">April 14, 2017</h5>
+                                    <p class="event-description">Exploit Leaked</p>
+                                    <div class="tooltip">Shadow Brokers leak EternalBlue publicly.</div>
+                                </div>
+                            </li>
+
+                            <li class="event-list">
+                                <div class="px-4">
+                                    <i class="fas fa-globe"></i>
+                                    <h5 class="font-size-16">May 12, 2017</h5>
+                                    <p class="event-description">WannaCry Spreads</p>
+                                    <div class="tooltip">Ransomware begins spreading globally.</div>
+                                </div>
+                            </li>
+
+                            <li class="event-list">
+                                <div class="px-4">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <h5 class="font-size-16">May 13, 2017</h5>
+                                    <p class="event-description">Patches Deployed</p>
+                                    <div class="tooltip">Security patches released to stop WannaCry.</div>
+                                </div>
+                            </li>
+
+                            <li class="event-list">
+                                <div class="px-4">
+                                    <i class="fas fa-recycle"></i>
+                                    <h5 class="font-size-16">May 19, 2017</h5>
+                                    <p class="event-description">Variants Appear</p>
+                                    <div class="tooltip">WannaCry variants appear without kill switches.</div>
+                                </div>
+                            </li>
+
+                            <li class="event-list">
+                                <div class="px-4">
+                                    <i class="fas fa-flag"></i>
+                                    <h5 class="font-size-16">December 2017</h5>
+                                    <p class="event-description">Attribution to North Korea</p>
+                                    <div class="tooltip">U.S. government attributes WannaCry to North Korea.</div>
+                                </div>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

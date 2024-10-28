@@ -1,0 +1,98 @@
+body {
+    background-color: #000000;
+}
+
+p {
+    color: #ffffff; /* White text */
+}
+
+h5 {
+    color: #FFFF00; /* Yellow text */
+}
+
+.carousel {
+    background-color: #000000; 
+}
+
+.carousel-indicators img {
+    width: 70px;
+    display: block;
+}
+
+.carousel-indicators button {
+    width: max-content!important;
+}
+
+.carousel-indicators {
+    position: unset;
+}
+
+.carousel-indicators button.active img {
+    border: 3px solid #530707;
+}
+
+.carousel-item img {
+    width: 100%; /* Ensures the image stretches the full width of the carousel */
+    height: 60vh; /* Sets the height to 60% of the viewport height */
+    object-fit: contain; /* Ensures the whole image is visible without being chopped off */
+    object-position: center; /* Centers the image */
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Monospace', sans-serif; /* Monospace with fallback */
+    color: #ffffff; /* Set text color to the light blue shade */
+    font-size: 3rem; /* Increase font size */
+    letter-spacing: 2px; /* Space out the letters slightly */
+    text-transform: uppercase; /* Make text uppercase for a bold look */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    animation: glow 1.5s ease-in-out infinite alternate; /* Animation for glow effect */
+}
+
+/* Keyframes for glow animation */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px hsla(0, 100%, 48%, 0.737), 0 0 20px #e2ff06, 0 0 30px #f10606;
+    }
+    to {
+        text-shadow: 0 0 20px #bb1414, 0 0 30px #e10909, 0 0 40px #a0d2eb;
+    }
+}
+
+.carousel-caption {
+    position: absolute; /* Positioning over the image */
+    bottom: 20px; /* Adjust the bottom position */
+    left: 50%; /* Move to the center of the container */
+    transform: translateX(-50%); /* Center the caption */
+    max-width: 90%; /* Limit the width of the caption to allow for better fitting */
+    color: #e5eaf5; /* Set your desired text color */
+    text-align: center; /* Center align the text */
+    padding: 10px; /* Add some padding */
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: Background for better visibility */
+    border-radius: 10px; /* Optional: Rounded corners */
+    overflow: hidden; /* Prevent overflow of text */
+}
+
+.carousel-caption h5,
+.carousel-caption p {
+    margin: 0; /* Remove default margins */
+    overflow-wrap: break-word; /* Break long words to fit */
+    white-space: normal; /* Allow text to wrap to the next line */
+}
+
+.carousel-caption h5 {
+    font-size: 1.5em; /* Optional: Adjust title font size */
+}
+
+.carousel-caption p {
+    font-size: 0.9em; /* Optional: Smaller font size for the paragraph */
+}
+.tutorial {
+    color: #ffffff;
+    position: absolute; /* Take the element out of the normal flow */
+    text-align: center; /* Center the text within its container */
+    bottom: 0; /* Align the element to the bottom */
+    left: 50%; /* Center the element horizontally */
+    transform: translateX(-50%); /* Adjust for 50% of its own width to perfectly center */
+    width: 100%; /* Optional: Ensure it spans the width of the page */
+}

@@ -10,105 +10,105 @@
     <title>WannaCry Timeline</title>
     <style>
         body {
-            background-color: #000000; /* Black background for the entire page */
+            background-color: #000000;
         }
 
         h1 {
     text-align: center;
-    font-family: 'Monospace', sans-serif; /* Monospace with fallback */
-    color: #ffffff; /* Set text color to the light blue shade */
-    font-size: 3rem; /* Increase font size */
-    letter-spacing: 2px; /* Space out the letters slightly */
-    text-transform: uppercase; /* Make text uppercase for a bold look */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
-    animation: glow 1.5s ease-in-out infinite alternate; /* Animation for glow effect */
+    font-family: 'Monospace', sans-serif; 
+    color: #ffffff; 
+    font-size: 3rem; 
+    letter-spacing: 2px; 
+    text-transform: uppercase; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+    animation: glow 1.5s ease-in-out infinite alternate; 
 }
 
-/* Keyframes for glow animation */
+
 @keyframes glow {
     from {
         text-shadow: 0 0 10px hsla(0, 100%, 48%, 0.737), 0 0 20px #e2ff06, 0 0 30px #f10606;
     }
     to {
-        text-shadow: 0 0 20px #bb1414, 0 0 30px #e10909, 0 0 40px #a0d2eb;
+        text-shadow: 0 0 20px #bb1414, 0 0 30px #e10909, 0 0 40px #cd2718;
     }
 }
 
         .card {
-            background-color: #000; /* Black background for the card */
-            border: none; /* No border for the card */
+            background-color: #000; 
+            border: none; 
         }
 
         .timeline {
-            list-style: none; /* Remove default list styles */
-            padding: 0; /* No padding */
-            margin: 0; /* No margin */
-            background-color: #000; /* Black background for the timeline */
-            padding: 10px; /* Add some padding around the timeline */
-            border-radius: 5px; /* Rounded corners */
+            list-style: none; 
+            padding: 0; 
+            margin: 0; 
+            background-color: #000; 
+            padding: 10px; 
+            border-radius: 5px; 
         }
 
         .event-list {
-            position: relative; /* Position relative for tooltip */
-            margin: 20px 0; /* Margin between events */
-            padding: 10px; /* Padding inside each event */
-            color: #FFFFFF; /* White text color */
-            background: rgba(128, 0, 0, 0.9); /* Dark red with transparency for event background */
-            border-radius: 5px; /* Rounded corners for events */
+            position: relative; 
+            margin: 20px 0; 
+            padding: 10px; 
+            color: #FFFFFF; 
+            background: rgba(128, 0, 0, 0.9); 
+            border-radius: 5px; 
         }
 
         .event-list i {
-            font-size: 24px; /* Icon size */
-            margin-right: 10px; /* Space between icon and text */
-            color: #FFD700; /* Gold color for icons */
+            font-size: 24px; 
+            margin-right: 10px; 
+            color: #FFD700; 
         }
 
         .tooltip {
-            display: none; /* Hidden by default */
-            position: absolute; /* Absolute positioning for tooltip */
-            background: rgba(0, 0, 0, 0.8); /* Dark background for tooltip */
-            color: #fff; /* White text for tooltip */
-            padding: 5px; /* Padding inside tooltip */
-            border-radius: 5px; /* Rounded corners for tooltip */
-            z-index: 10; /* Ensure tooltip is on top */
-            top: 100%; /* Position below the event */
-            left: 50%; /* Center horizontally */
-            transform: translateX(-50%); /* Center alignment */
-            white-space: nowrap; /* No line breaks */
+            display: none; 
+            position: absolute; 
+            background: rgba(0, 0, 0, 0.8); 
+            color: #fff; 
+            padding: 5px; 
+            border-radius: 5px; 
+            z-index: 10; 
+            top: 100%; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            white-space: nowrap; 
         }
 
         .event-list:hover .tooltip {
-            display: block; /* Show tooltip on hover */
+            display: block; 
         }
 
         .modal-content {
-            background-color: rgba(0, 0, 0, 0.8); /* Dark background for modal */
-            color: white; /* White text for modal */
-            border-radius: 10px; /* Rounded corners for modal */
+            background-color: rgba(0, 0, 0, 0.8); 
+            color: white; 
+            border-radius: 10px; 
         }
 
         .modal-header,
         .modal-footer {
-            border: none; /* No border for modal header and footer */
+            border: none; 
         }
 
-        /* YouTube video container */
+       
         .video-container {
-            position: relative; /* Position relative for video container */
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0; /* No height */
-            overflow: hidden; /* Hide overflow */
-            max-width: 100%; /* Full width */
-            background: #000; /* Black background for video area */
-            margin-bottom: 20px; /* Margin below the video */
+            position: relative; 
+            padding-bottom: 56.25%; 
+            height: 0; 
+            overflow: hidden; 
+            max-width: 100%; 
+            background: #000; 
+            margin-bottom: 20px; 
         }
 
         .video-container iframe {
-            position: absolute; /* Absolute positioning for iframe */
-            top: 0; /* Top alignment */
-            left: 0; /* Left alignment */
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
         }
     </style>
 </head>
